@@ -150,14 +150,65 @@
   height: 300px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-section {
-    padding: 60px 20px;
+    padding: 60px 30px;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
 
   .hero-section h2 {
-    font-size: 36px;
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px 30px;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 24px 18px;
+  }
+
+  .feature-icon {
+    font-size: 40px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+  }
+
+  .cta-section {
+    padding: 32px;
+  }
+
+  .cta-section h3 {
+    font-size: 20px;
+  }
+
+  .cta-button {
+    padding: 12px 32px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+
+  .hero-section h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
   }
 
   .subtitle {
@@ -167,13 +218,108 @@
   .features-grid {
     grid-template-columns: 1fr;
     padding: 40px 20px;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 20px 16px;
+  }
+
+  .feature-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+    margin: 12px 0 8px 0;
+  }
+
+  .feature-card p {
+    font-size: 12px;
   }
 
   .cta-section {
-    padding: 32px 20px;
+    padding: 24px 20px;
   }
 
   .cta-section h3 {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 0 0 16px 0;
+  }
+
+  .cta-button {
+    padding: 11px 28px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 16px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  .hero-section h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .hero-section h2 {
+    letter-spacing: 0;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 32px 16px;
+    gap: 12px;
+  }
+
+  .feature-card {
+    padding: 16px 12px;
+    border-radius: 10px;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .feature-card h3 {
+    font-size: 13px;
+    margin: 10px 0 6px 0;
+  }
+
+  .feature-card p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .cta-section {
+    padding: 20px 16px;
+    margin-top: auto;
+  }
+
+  .cta-section h3 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+  }
+
+  .cta-button {
+    padding: 10px 24px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-1px);
   }
 }

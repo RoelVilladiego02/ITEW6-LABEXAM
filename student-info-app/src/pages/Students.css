@@ -368,21 +368,31 @@
   .controls-section {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
 
   .sort-filter {
     width: 100%;
     justify-content: space-between;
   }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .page-content h2 {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 768px) {
   .page-content {
-    padding: 24px 16px;
+    padding: 20px 16px;
   }
 
   .page-content h2 {
     font-size: 24px;
+    margin-bottom: 20px;
   }
 
   .students-list {
@@ -391,10 +401,188 @@
 
   .controls-section {
     padding: 16px;
+    gap: 12px;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+
+  .sort-filter {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .sort-filter label {
+    min-width: auto;
+  }
+
+  .sort-select {
+    flex: 1;
   }
 
   .stats-display {
     width: 100%;
     justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .selected-panel {
+    max-height: 250px;
+  }
+
+  .panel-header {
+    padding: 16px;
+  }
+
+  .panel-header h3 {
+    font-size: 14px;
+  }
+
+  .selected-list {
+    padding: 8px;
+  }
+
+  .selected-item {
+    padding: 10px;
+    margin-bottom: 6px;
+  }
+
+  .selected-name {
+    font-size: 12px;
+  }
+
+  .selected-email {
+    font-size: 10px;
+  }
+
+  .panel-actions {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .action-btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    padding: 16px 12px;
+  }
+
+  .page-content h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .page-content h2::before {
+    font-size: 28px;
+  }
+
+  .students-list {
+    gap: 10px;
+  }
+
+  .controls-section {
+    padding: 12px;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .search-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .sort-filter {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sort-filter label {
+    font-size: 12px;
+  }
+
+  .sort-select {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .stats-display {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stat-item {
+    font-size: 11px;
+    padding: 6px 10px;
+    text-align: center;
+  }
+
+  .loading,
+  .error {
+    padding: 30px 16px;
+    font-size: 14px;
+  }
+
+  .loading::before,
+  .error::before {
+    font-size: 28px;
+  }
+
+  .selected-panel {
+    max-height: 200px;
+  }
+
+  .panel-header {
+    padding: 12px;
+  }
+
+  .panel-header h3 {
+    font-size: 12px;
+  }
+
+  .close-panel {
+    font-size: 18px;
+  }
+
+  .selected-list {
+    padding: 6px;
+  }
+
+  .selected-item {
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+
+  .selected-name {
+    font-size: 11px;
+  }
+
+  .selected-email {
+    font-size: 9px;
+  }
+
+  .remove-btn {
+    font-size: 14px;
+    padding: 3px 6px;
+  }
+
+  .panel-actions {
+    padding: 10px;
+  }
+
+  .action-btn {
+    padding: 8px 12px;
+    font-size: 11px;
   }
 }
