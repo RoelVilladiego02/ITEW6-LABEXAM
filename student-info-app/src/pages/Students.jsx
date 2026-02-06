@@ -65,20 +65,43 @@ export function Students() {
   };
 
   const handleExportSelected = () => {
-    const selectedData = getSelectedStudentDetails();
-    const csv = [
-      ['Name', 'Email', 'Company', 'Phone', 'Website'],
-      ...selectedData.map(s => [s.name, s.email, s.company.name, s.phone, s.website])
-    ]
-      .map(row => row.join(','))
-      .join('\n');
+    if (selectedStudentDetails.length === 0) {
+      alert('Please select at least one student to export');
+      return;
+    }
 
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'selected-students.csv';
-    a.click();
+    try {
+      const headers = ['Name', 'Email', 'School', 'Course', 'Year', 'Phone', 'Portfolio'];
+      const rows = selectedStudentDetails.map(s => [
+        `"${s.name}"`,
+        `"${s.email}"`,
+        `"${s.school}"`,
+        `"${s.course}"`,
+        `"${s.year}"`,
+        `"${s.phone}"`,
+        `"${s.website}"`
+      ]);
+
+      const csv = [
+        headers.join(','),
+        ...rows.map(row => row.join(','))
+      ].join('\n');
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      
+      link.setAttribute('href', url);
+      link.setAttribute('download', `selected-students-${new Date().getTime()}.csv`);
+      link.style.visibility = 'hidden';
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Export failed:', error);
+      alert('Failed to export data. Please try again.');
+    }
   };
 
   if (loading) {
